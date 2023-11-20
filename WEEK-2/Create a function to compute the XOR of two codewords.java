@@ -1,24 +1,21 @@
+//  2. Create a function to compute the XOR of two codewords.
+
 import java.util.Scanner;
-class week2_1
+public class week2_2 
 {
-    public static void main(String [] ard)
+    public static void main(String[] ar)
     {
         Scanner i1=new Scanner(System.in);
         System.out.println("Enter codewords : ");
-        System.out.println(codewordcheck(i1.next(),i1.next()));
+        xor(i1.next(),i1.next());
         i1.close();
     }
-    static int codewordcheck(String a,String b)
+    static void xor(String a,String b)
     {
-        int c=0;
         if(a.length()!=b.length())
-            return -1;
+            System.out.println("-1");
         else
-        for(int i=0;i<a.length();i++)
-        {
-            if(a.charAt(i)!=b.charAt(i))
-                c=c+1;
-        }
-        return c;
+            for(int i=0;i<a.length();i++)
+                System.out.print(a.charAt(i)^b.charAt(i));
     }
 }
