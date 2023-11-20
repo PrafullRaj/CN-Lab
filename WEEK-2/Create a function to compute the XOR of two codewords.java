@@ -1,58 +1,24 @@
 import java.util.Scanner;
-
-class Main
+class week2_1
 {
-  
-public static void main (String[]args)
-  {
-    
-Scanner sc = new Scanner (System.in);
-    
- 
-System.out.print ("Enter codeword 1: ");
-    
-String codeword1 = sc.nextLine ();
-    
- 
-System.out.print ("Enter codeword 2: ");
-    
-String codeword2 = sc.nextLine ();
-    
- 
-String xorRet = xorCs (codeword1, codeword2);
-    
-System.out.println (xorRet);
-  
-} 
- 
-public static String xorCs (String codeword1, String codeword2)
-  {
-    
-if (codeword1.length () != codeword2.length ())
-      {
-	
-return "-1";
-      
-}
-    else
-      {
-	
-StringBuilder xorRet = new StringBuilder ();
-	
-for (int i = 0; i < codeword1.length (); i++)
-	  {
-	    
-char bit1 = codeword1.charAt (i);
-	    
-char bit2 = codeword2.charAt (i);
-	    
-xorRet.append (bit1 == bit2 ? '0' : '1');
-	  
-} 
-return xorRet.toString ();
-      
-}
-  
-}
-
+    public static void main(String [] ard)
+    {
+        Scanner i1=new Scanner(System.in);
+        System.out.println("Enter codewords : ");
+        System.out.println(codewordcheck(i1.next(),i1.next()));
+        i1.close();
+    }
+    static int codewordcheck(String a,String b)
+    {
+        int c=0;
+        if(a.length()!=b.length())
+            return -1;
+        else
+        for(int i=0;i<a.length();i++)
+        {
+            if(a.charAt(i)!=b.charAt(i))
+                c=c+1;
+        }
+        return c;
+    }
 }
